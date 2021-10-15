@@ -1,0 +1,22 @@
+::ng-deep .mat-horizontal-stepper-header-container {
+  border-top: solid 5px #cfd3e6;
+}
+
+::ng-deep mat-stepper-horizontal, mat-stepper-horizontal {
+  border: dashed 1px blue;
+  padding: 50em;
+}
+
+.mat-form-field  {
+  padding: 20px 20px 20px 0px;
+  width: 20em;
+}
+
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button  {
+  background: #667ae7;
+  color: #fff;
+  padding: 0 16px;
+  margin: 5px;
+
+  }
+

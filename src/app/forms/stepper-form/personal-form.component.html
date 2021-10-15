@@ -1,0 +1,109 @@
+<mat-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Datos personales</ng-template>
+      <div class="box">
+        <div><span style="font-size: 15px; font-weight: 500">Datos Personales</span><br>
+        <mat-form-field appearance="fill">
+          <!-- Datos -->
+
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Ingresa tu nombre" formControlName="nombre" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Apellido</mat-label>
+          <input matInput placeholder="Ingresa tu apellido" formControlName="apellido" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>DNI</mat-label>
+          <input matInput placeholder="Ingresa tu DNI sin puntos" formControlName="dni" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Ubicacion</mat-label>
+          <input matInput placeholder="Ingresa tu ubicacion" formControlName="ubicacion" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Fecha de Nacimiento</mat-label>
+          <input matInput placeholder="Igresa una fecha" formControlName="nacimiento" required>
+        </mat-form-field>
+      </div>
+        <!-- Datos de contacto -->
+        <div><span style="font-size: 15px; font-weight: 500">Datos de contacto</span><br>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Ingresa tu email" formControlName="email" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Telefono</mat-label>
+          <input matInput placeholder="Ingresa tu telefono" formControlName="telefono" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Celular</mat-label>
+          <input matInput placeholder="Ingresa tu celular" formControlName="celular" required>
+        </mat-form-field>
+      </div>
+
+        <!-- Alta de usuario -->
+        <div><span style="font-size: 15px; font-weight: 500">Alta de Usuario</span> <br>
+        <mat-form-field>
+          <mat-label>Usuario</mat-label>
+          <input matInput placeholder="Nuevo usuario" formControlName="usuario" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Contraseña</mat-label>
+          <input matInput placeholder="Ingresa una contraseña" formControlName="contraseña" required>
+        </mat-form-field>
+      </div>
+    </div>
+      <div>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Datos del vehiculo">
+    <form [formGroup]="secondFormGroup">
+      <mat-form-field appearance="fill">
+        <mat-label>Marca</mat-label>
+        <input matInput formControlName="marca" placeholder="Marca del vehiculo" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Año</mat-label>
+        <input matInput formControlName="año" placeholder="Año del vehiculo" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Modelo</mat-label>
+        <input matInput formControlName="modelo" placeholder="Modelo del vehiculo" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Versión</mat-label>
+        <input matInput formControlName="version" placeholder="Versión del vehiculo" required>
+      </mat-form-field>
+      <mat-step [stepControl]="secondFormGroup" label="Coberturas disponibles"></mat-step>
+
+      <div>
+        <button mat-button matStepperPrevious>Anterior</button>
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+  <mat-step>
+    <ng-template matStepLabel>Resumen</ng-template>
+    <p></p>
+    <div>
+      <button mat-button matStepperPrevious>Modificar</button>
+      <button mat-button (click)="stepper.reset()">Confirmar</button>
+    </div>
+  </mat-step>
+</mat-stepper>
