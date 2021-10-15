@@ -8,7 +8,7 @@ import { VehiculoService } from '../../services/vehiculo.service';
   styleUrls: ['./personal-form.component.css'],
 })
 export class PersonalFormComponent implements OnInit {
-  isLinear = false;
+  isLinear = false; //false hace que el usuario pueda navegar entre los steps libremente.
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
   marcas: any = [];
@@ -34,6 +34,7 @@ export class PersonalFormComponent implements OnInit {
         Validators.required,
         Validators.minLength(8),
         Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]{8,}$'),
+        //expresion regular para: minimo ocho caracteres, al menos una letra, un numero y un caracter especial
       ],
     });
     this.secondFormGroup = this.fb.group({
