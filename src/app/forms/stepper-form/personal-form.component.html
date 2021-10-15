@@ -69,9 +69,15 @@
   </mat-step>
   <mat-step [stepControl]="secondFormGroup" label="Datos del vehiculo">
     <form [formGroup]="secondFormGroup">
+
       <mat-form-field appearance="fill">
         <mat-label>Marca</mat-label>
-        <input matInput formControlName="marca" placeholder="Marca del vehiculo" required>
+        <mat-select matInput formControlName="marca" placeholder="Marca del vehiculo" required>
+          <mat-option *ngFor="let marca of marcas" [value]="marca.desc">
+          {{marca.desc}}
+          </mat-option>
+        </mat-select>
+
       </mat-form-field>
 
       <mat-form-field appearance="fill">

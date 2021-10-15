@@ -8,6 +8,8 @@ import { MaterialModule } from './material.module';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
+//services
+import { VehiculoService } from './services/vehiculo.service'
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    VehiculoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
