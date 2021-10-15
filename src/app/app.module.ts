@@ -3,20 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { PersonalFormComponent } from './forms/stepper-form/personal-form.component';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
-//services
-import { VehiculoService } from './services/vehiculo.service'
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
+import { VehiculoService } from './services/vehiculo.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PersonalFormComponent,
-  ],
+  declarations: [AppComponent, PersonalFormComponent],
   imports: [
     BrowserModule,
     NoopAnimationsModule,
@@ -24,11 +22,11 @@ import { VehiculoService } from './services/vehiculo.service'
     MatFormFieldModule,
     ReactiveFormsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [
-    VehiculoService
-  ],
-  bootstrap: [AppComponent]
+  providers: [VehiculoService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

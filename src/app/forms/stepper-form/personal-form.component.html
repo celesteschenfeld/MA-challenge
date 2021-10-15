@@ -4,64 +4,69 @@
       <ng-template matStepLabel>Datos personales</ng-template>
       <div class="box">
         <div><span style="font-size: 15px; font-weight: 500">Datos Personales</span><br>
-        <mat-form-field appearance="fill">
-          <!-- Datos -->
+          <mat-form-field appearance="fill">
+            <!-- Datos -->
 
-          <mat-label>Nombre</mat-label>
-          <input matInput placeholder="Ingresa tu nombre" formControlName="nombre" required>
-        </mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Ingresa tu nombre" formControlName="nombre" required>
+          </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>Apellido</mat-label>
-          <input matInput placeholder="Ingresa tu apellido" formControlName="apellido" required>
-        </mat-form-field>
+          <mat-form-field>
+            <mat-label>Apellido</mat-label>
+            <input matInput placeholder="Ingresa tu apellido" formControlName="apellido" required>
+          </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>DNI</mat-label>
-          <input matInput placeholder="Ingresa tu DNI sin puntos" formControlName="dni" required>
-        </mat-form-field>
+          <mat-form-field>
+            <mat-label>DNI</mat-label>
+            <input matInput placeholder="Ingresa tu DNI sin puntos" formControlName="dni" required>
+          </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>Ubicacion</mat-label>
-          <input matInput placeholder="Ingresa tu ubicacion" formControlName="ubicacion" required>
-        </mat-form-field>
+          <mat-form-field>
+            <mat-label>Ubicacion</mat-label>
+            <input matInput placeholder="Ingresa tu ubicacion" formControlName="ubicacion" required>
+          </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>Fecha de Nacimiento</mat-label>
-          <input matInput placeholder="Igresa una fecha" formControlName="nacimiento" required>
-        </mat-form-field>
-      </div>
+          <mat-form-field>
+            <mat-label>Fecha de Nacimiento</mat-label>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <input [matDatepicker]="picker" matInput placeholder="Igresa una fecha" formControlName="nacimiento"
+              required>
+          </mat-form-field>
+
+
+        </div>
         <!-- Datos de contacto -->
         <div><span style="font-size: 15px; font-weight: 500">Datos de contacto</span><br>
-        <mat-form-field>
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="Ingresa tu email" formControlName="email" required>
-        </mat-form-field>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Ingresa tu email" formControlName="email" required>
+          </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>Telefono</mat-label>
-          <input matInput placeholder="Ingresa tu telefono" formControlName="telefono" required>
-        </mat-form-field>
+          <mat-form-field>
+            <mat-label>Telefono</mat-label>
+            <input matInput placeholder="Ingresa tu telefono" formControlName="telefono" required>
+          </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>Celular</mat-label>
-          <input matInput placeholder="Ingresa tu celular" formControlName="celular" required>
-        </mat-form-field>
-      </div>
+          <mat-form-field>
+            <mat-label>Celular</mat-label>
+            <input matInput placeholder="Ingresa tu celular" formControlName="celular" required>
+          </mat-form-field>
+        </div>
 
         <!-- Alta de usuario -->
         <div><span style="font-size: 15px; font-weight: 500">Alta de Usuario</span> <br>
-        <mat-form-field>
-          <mat-label>Usuario</mat-label>
-          <input matInput placeholder="Nuevo usuario" formControlName="usuario" required>
-        </mat-form-field>
+          <mat-form-field>
+            <mat-label>Usuario</mat-label>
+            <input matInput placeholder="Nuevo usuario" formControlName="usuario" required>
+          </mat-form-field>
 
-        <mat-form-field>
-          <mat-label>Contraseña</mat-label>
-          <input matInput placeholder="Ingresa una contraseña" formControlName="contraseña" required>
-        </mat-form-field>
+          <mat-form-field>
+            <mat-label>Contraseña</mat-label>
+            <input matInput placeholder="Ingresa una contraseña" formControlName="contraseña" required>
+          </mat-form-field>
+        </div>
       </div>
-    </div>
       <div>
         <button mat-button matStepperNext>Siguiente</button>
       </div>
@@ -74,7 +79,7 @@
         <mat-label>Marca</mat-label>
         <mat-select matInput formControlName="marca" placeholder="Marca del vehiculo" required>
           <mat-option *ngFor="let marca of marcas" [value]="marca.desc">
-          {{marca.desc}}
+            {{marca.desc}}
           </mat-option>
         </mat-select>
 
@@ -92,7 +97,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Versión</mat-label>
-        <input matInput formControlName="version" placeholder="Versión del vehiculo" required>
+        <input matInput formControlName="version" placeholder="Versión del vehiculo">
       </mat-form-field>
       <mat-step [stepControl]="secondFormGroup" label="Coberturas disponibles"></mat-step>
 
